@@ -6,10 +6,10 @@ EX.
 
 {
 
-"name": "技嘉 GeForce RTX™ 3070 Ti GAMING OC 8G 顯示卡+技嘉 B550M AORUS PRO-P",
+"name": "3070",
 
-"price": "32180",
+"price": "12345",
 
-"link": "https://24h.pchome.com.tw/prod/DRAD1E-1900BJEJQ?fq=/S/DRADIW"
+"link": "https://24h.pchome.com.tw/XXX"
 
 }
