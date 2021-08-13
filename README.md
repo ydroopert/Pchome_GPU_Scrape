@@ -11,7 +11,9 @@ the app opens up a browser and perform a for loop to go through all the urls pro
 將CUSTOM處修改來獲得資料
 
 
-EX.
+Heroku  EX.
+
+(suggest extending the interval time for heroku due to issue with long waiting time at the for loop on heroku. 90sec is stable for 9 goto pages)
 
 
 GPU scraper for PChome
