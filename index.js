@@ -1,6 +1,8 @@
 import express from 'express';
 import puppeteer from 'puppeteer';
-import {RTX3090,RTX3080TI,RTX3080,RTX3070TI,RTX3070,RTX3060TI,RTX3060,RTX2060,GTX1660TI} from './url.js'
+
+// import your own url
+import { custom_here } from './url.js'
 const port = process.env.PORT || '5000';
 const app = express();
 let GList = []
@@ -8,9 +10,8 @@ let GList = []
 async function scrapeProduct() {
   try {
     const array = []
-    const url = [RTX3090,RTX3080TI,RTX3080,RTX3070TI,RTX3070,RTX3060TI,RTX3060,RTX2060,GTX1660TI]
+    const url = [custom_here]
     const browser = await puppeteer.launch({
-      headless: false,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -25,13 +26,22 @@ async function scrapeProduct() {
       await page.goto(url[i])
       const result = await page.evaluate(() => {
         const List = []
-        allProduct = document.querySelectorAll("div.prod_info")
+        
+        //custom your own DOM searchAll option
+        allProduct = document.querySelectorAll(custom_option)
+        
         allProduct.forEach(ele => {
-          if (ele.querySelector('ul.price_box > li > span.site_btn.orderNow > button') !== null || ele.querySelector('ul.price_box > li > span.site_btn.add24hCart > button') !== null) {
+          
+          //custom your jquery methods
+          
+          if (custom_jquery_methods) {
+            
+            //custom your object
+            
             const GraphicCard = {
-              'name': ele.querySelector('a').innerText,
-              'price': ele.querySelector('.value').innerText,
-              'link': ele.querySelector('a').href
+              
+              custom_here
+              
             }
             List.push(GraphicCard)
           }
@@ -48,17 +58,18 @@ async function scrapeProduct() {
   }
 }
 
-async function createList(){
+async function createList() {
   try {
-    GList = [];
-    GList.push(await scrapeProduct())
-  }catch (err) {
+    const getData = await scrapeProduct()
+    GList = []
+    GList.push(getData)
+  } catch (err) {
     console.log(err);
   }
 }
 
 createList()
-setInterval(()=>createList(),30000)
+setInterval(() => createList(), 90000)
 
 app.get('/', (req, res) => {
   res.send(GList);
