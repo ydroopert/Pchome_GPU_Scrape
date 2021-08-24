@@ -1,4 +1,5 @@
-auto scraper
+GPU scraper for PChome
+自動刷新統整PCHOME現有庫存能購買的顯卡(GTX1660TI~RTX3090系列)並以JSON形式傳回
 
 this app allows you to open a browser with puppeteer and scrape for custom products.
 
@@ -15,10 +16,7 @@ Heroku  EX.  (might have to wait a bit since heroku will idle for low traffic, g
 
 (suggest extending the interval time for heroku due to issue with long waiting time at the for loop on heroku. 90sec is stable for 9 goto pages)
 
-
-GPU scraper for PChome
-自動刷新統整PCHOME現有庫存能購買的顯卡(GTX1660TI~RTX3090系列)並以JSON形式傳回
-
+HEROKU免費服會自動休眠，打開網站會重新啟動APP並須等待期跑完程序才能獲取清單
 LINK:https://pchome-gpu.herokuapp.com/
 
 returns 
