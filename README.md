@@ -11,6 +11,9 @@ the app opens up a browser and perform a for loop to go through all the urls pro
 
 將CUSTOM處修改來獲得資料
 
+Using free heroku, it takes some time to boot + run scrape.
+
+Heroku網頁開後還得等個十幾秒
 
 Heroku  EX.  
 
